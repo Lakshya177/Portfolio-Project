@@ -117,9 +117,10 @@ The portfolio is designed to work across:
 ## 🌐 Live Demo
 
 🔗 **Live Project:** [View Portfolio](YOUR_LIVE_PROJECT_LINK)
-## 🎯 Purpose
 
 ---
+
+## 🎯 Purpose
 
 This project was created to build a unique developer portfolio that combines **web development with interactive 3D experiences**, making the portfolio more engaging than a traditional static website.
 
