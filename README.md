@@ -1,7 +1,6 @@
 # 🧩 Rubik's Cube Developer Portfolio
 
 A modern and interactive developer portfolio inspired by the logic, structure, and elegance of a **Rubik's Cube**.
-
 The portfolio features a fully interactive **3D Rubik's Cube**, smooth animations, dynamic UI elements, and a responsive single-page design to showcase my skills, projects, resume, and developer profile.
 
 ---
