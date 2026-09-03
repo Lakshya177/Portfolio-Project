@@ -116,7 +116,7 @@ The portfolio is designed to work across:
 
 ## 🌐 Live Demo
 
-🔗 **Live Project:** [View Portfolio](YOUR_LIVE_PROJECT_LINK)
+🔗 **Live Project:** [View Portfolio](https://spectacular-melba-f2ef00.netlify.app)
 
 ---
 
