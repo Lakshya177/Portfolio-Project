@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio (Lakshya Gupta)</title>
+    <meta name="description"
+        content="Portfolio of Lakshya Gupta,a a Full Stack Developer focused on building clean, fast, and beautiful web applications">
+
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:title" content="Lakshya Gupta | Portfolio">
+    <meta property="og:description"
+        content="I build complete web applications from front-end to back-end.">
+    <meta property="og:image" content="image.jpeg">
+    <meta property="og:url" content="https://www.linkedin.com/in/lakshyaxgupta">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // Replace "YOUR_PUBLIC_KEY" with your actual EmailJS Public Key
+            emailjs.init({
+                publicKey: "RGHZabu1IgOd5Fnb5",
+            });
+        })();
+    </script>
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="cur"></div>
+    <div id="cur-dot"></div>
+    <div id="progress"></div>
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- NAV -->
+    <nav>
+        <a href="#hero" class="logo">
+            <div class="logo-cube"></div>
+            Portfolio
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ════════ HERO ════════ -->
+    <section id="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-content">
+            <div class="badge">
+                <div class="badge-dot"></div> Ready to work
+            </div>
+            <h1 class="hero-name">
+                <span>Hello, I'm</span>
+                <span class="line2">Lakshya Gupta</span>
+            </h1>
+            <p class="hero-role"><span id="typed"></span></p>
+            <p class="hero-desc">
+              Computer Science graduate skilled in Java, OOP, and database technologies, with hands-on experience developing Java-based projects and applications. Seeking an entry-level Java Developer role to apply my technical skills, learn new technologies, and grow in a dynamic professional environment.
+            </p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn-p btn-m">View Projects &rarr;</a>
+                <a href="#contact" class="btn-s btn-m">Get In Touch</a>
+            </div>
+        </div>
+
+        <!-- 3D Rubik's Cube -->
+        <div class="cube-wrapper" id="cubeWrapper">
+            <div class="cube-aura"></div>
+            <div class="cube-viewport">
+                <div id="cubeScene"></div>
+            </div>
+            <div class="cube-ui">
+                <div class="cube-status" id="cubeStatus">Initializing...</div>
+                <div class="cube-btns">
+                    <button class="cbtn btn-m" id="btnScramble">Scramble</button>
+                    <button class="cbtn cbtn-solve btn-m" id="btnSolve">Solve</button>
+                </div>
+                <div class="cube-hint">Drag to rotate &bull; buttons to scramble/solve</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="pips" style="background:var(--bg2)">
+        <div class="pip"></div>
+        <div class="pip"></div>
+        <div class="pip"></div>
+        <div class="pip"></div>
+        <div class="pip"></div>
+        <div class="pip"></div>
+    </div>
+
+    <!-- ════════ ABOUT ════════ -->
+    <section id="about">
+        <div class="sec-head up">
+             <div class="sec-tag">01 &mdash; About</div>
+            <h2 class="sec-title">The <span>Full stack Developer</span> Behind The Cube</h2>
+        </div>
+
+        <div class="about-container">
+            <div class="about-photo mobile-only up">
+                <img src="image.png" alt="Lakshya Gupta" loading="lazy">
+            </div>
+
+            <div class="about-stats-wrapper mobile-only up">
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-n" data-target="6">0</div>
+                        <div class="stat-l">Core Techs</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-n" data-target="4">0</div>
+                        <div class="stat-l">Projects</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-n" data-target="5" data-decimals="0">0</div>
+                        <div class="stat-l">Coding Hours</div>
+                    </div>
+                    <div class="stat">
+                           <div class="stat-n" data-target="0" data-decimals="0">0</div>
+                        <div class="stat-l"> Experience</div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-bio up">
+                <div class="about-text">
+                  <p>
+    I am a Full Stack Developer with knowledge of both desktop and web application development. I enjoy building real-world projects, developing applications, and learning new technologies.
+</p>
+
+<p>
+    I have created projects using Java Swing, JDBC, Servlet, JSP, HTML, CSS, JavaScript, and MySQL. I am interested in backend development, database-driven applications, and building efficient and user-friendly web applications.
+</p>
+
+
+<p class="about-accent">"If you don't sacrifice for what you want, what you want becomes the sacrifice."</p>
+                </div>
+            </div>
+
+            <!-- Right Side: Photo + Stats (Desktop) -->
+            <div class="about-right-col desktop-only-flex up">
+                <div class="about-photo">
+                    <img src="image.png" alt="Lakshya Gupta" loading="lazy">
+                </div>
+                <div class="about-stats-wrapper">
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-n" data-target="6">0</div>
+                            <div class="stat-l">Core Techs</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-n" data-target="4">0</div>
+                            <div class="stat-l">Projects</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-n" data-target="5" data-decimals="0">0</div>
+                            <div class="stat-l">Coding Hours</div>
+                        </div>
+                        <div class="stat">
+                        <div class="stat-n" data-target="0" data-decimals="0">0</div>
+                        <div class="stat-l"> Experience</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="pips" style="background:var(--bg)">
+        <div class="pip"></div>
+        <div class="pip"></div>
+        <div class="pip"></div>
+        <div class="pip"></div>
+        <div class="pip"></div>
+    </div>
+
+    <!-- ════════ SKILLS ════════ -->
+    <section id="skills">
+        <div class="sec-head">
+             <div class="sec-tag">02 &mdash; Skills</div>
+            <h2 class="sec-title">My <span>Tech Stack</span></h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card sk-html up">
+                <div class="sk-scene">
+                    <div class="sk-cube" style="animation-delay:-5.25s">
+                        <div class="sf f" style="background:var(--red)">&#127760;</div>
+                        <div class="sf b" style="background:var(--red)"></div>
+                        <div class="sf l" style="background:var(--red)"></div>
+                        <div class="sf r" style="background:var(--red)"></div>
+                        <div class="sf t" style="background:var(--red)"></div>
+                        <div class="sf d" style="background:var(--red)"></div>
+                    </div>
+                </div>
+                <div class="sk-name">Frontend Development</div>
+                <div class="sk-desc">HTML &nbsp;CSS3&nbsp; JavaScript&nbsp;  JSP &nbsp; Servlet &nbsp;&amp; Bootstrap</div>
+                <div class="bar-wrap">
+                    <div class="bar" data-w="100"></div>
+                </div>
+            </div>
+            <div class="skill-card sk-css up">
+                <div class="sk-scene">
+                    <div class="sk-cube" style="animation-delay:-3.5s">
+                        <div class="sf f" style="background:#0051A2">&#129302;</div>
+                        <div class="sf b" style="background:#003d7a"></div>
+                        <div class="sf l" style="background:#004489"></div>
+                        <div class="sf r" style="background:#003d7a"></div>
+                        <div class="sf t" style="background:#0066cc"></div>
+                        <div class="sf d" style="background:#002d5c"></div>
+                    </div>
+                </div>
+                <div class="sk-name">Backend Development</div>
+                <div class="sk-desc">Java &nbsp; REST API &nbsp; SpringBoot &nbsp; Spring MVC &nbsp; &amp; &nbsp; Hibernate &nbsp; JDBC</div>
+                <div class="bar-wrap">
+                    <div class="bar" data-w="100"></div>
+                </div>
+            </div>
+            <div class="skill-card sk-js up">
+                <div class="sk-scene">
+                    <div class="sk-cube" style="animation-delay:-1.75s">
+                        <div class="sf f" style="background:#FFD500">&#9729;</div>
+                        <div class="sf b" style="background:#ccaa00"></div>
+                        <div class="sf l" style="background:#dbb800"></div>
+                        <div class="sf r" style="background:#ccaa00"></div>
+                        <div class="sf t" style="background:#ffdf33"></div>
+                        <div class="sf d" style="background:#997e00"></div>
+                    </div>
+                </div>
+                <div class="sk-name">Database</div>
+                <div class="sk-desc">MySQL &nbsp; PostgreSQL</div>
+                <div class="bar-wrap">
+                    <div class="bar" data-w="100"></div>
+                </div>
+            </div>
+            <div class="skill-card sk-py up">
+                <div class="sk-scene">
+                    <div class="sk-cube" style="animation-delay:0s">
+                        <div class="sf f" style="background:#009B48">&#128013;</div>
+                        <div class="sf b" style="background:#007336"></div>
+                        <div class="sf l" style="background:#00853e"></div>
+                        <div class="sf r" style="background:#007336"></div>
+                        <div class="sf t" style="background:#00b854"></div>
+                        <div class="sf d" style="background:#005c2b"></div>
+                    </div>
+                </div>
+                <div class="sk-name">Tools & Technologies</div>
+                <div class="sk-desc">Git & GitHub &nbsp; Maven &nbsp; Postman &nbsp; Apache Tomcat &nbsp; VS Code &nbsp;Eclipse  &nbsp;  &amp; &nbsp; Netbeans</div>
+                <div class="bar-wrap">
+                    <div class="bar" data-w="100"></div>
+                </div>
+            </div>
+
+
+    </section>
+
+    <div class="pips" style="background:var(--bg2)">
+        <div class="pip"></div>
+        <div class="pip"></div>
+        <div class="pip"></div>
+        <div class="pip"></div>
+    </div>
+
+    <!-- ════════ PROJECTS ════════ -->
+    <section id="projects">
+        <div class="sec-head">
+            <div class="sec-tag">03 &mdash; Projects</div>
+            <h2 class="sec-title">Featured <span>Work</span></h2>
+        </div>
+        <div class="projects-grid">
+            <div class="proj p1 up">
+                <div class="proj-inner">
+                    <div class="proj-f">
+                        <div class="proj-num">01 / 04</div>
+                        <div class="proj-ico"
+                            style="background-image: url('/C:/Users/Asus/.gemini/antigravity/brain/27dfebe1-757e-4d73-b059-d88e2f203946/potli_budget_app_1772912367902.png'); background-size: cover; border-radius: 12px; height: 120px; width: 100%; margin-bottom: 12px;">
+                        </div>
+                        <div class="proj-title">Employee Management</div>
+                        <div class="proj-tags"><span class="ptag"
+                                style="color:var(--yellow);border-color:var(--yellow)">Java</span><span class="ptag"
+                                style="color:var(--red);border-color:var(--red)">Mysql</span><span class="ptag"
+                                style="color:var(--blue);border-color:var(--blue)">JDBC</span><span class="ptag"
+                                style="color:var(--green);border-color:var(--green)">Swing</span></div>
+                    </div>
+                    <div class="proj-bk">
+                        <div class="proj-desc">
+                            <div class="proj-title"><span style="color:#007bff; font-weight:bold; margin:0 5px;">Role:</span>Java  Developer</div>Employee Management (desktop application) using Java Swing and JDBC with CRUD operations, auto ID generation, validation, and MySQL database connectivity.</div>
+                      <!-- <a href="http://localhost:8080/Cricket/" class="proj-link" target="_blank">Audience Login &rarr;</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="proj p2 up">
+                <div class="proj-inner">
+                    <div class="proj-f">
+                        <div class="proj-num">02 / 04</div>
+                        <div class="proj-ico"
+                            style="background-image: url('/C:/Users/Asus/.gemini/antigravity/brain/27dfebe1-757e-4d73-b059-d88e2f203946/shopsyra_ai_shopping_1772912386811.png'); background-size: cover; border-radius: 12px; height: 120px; width: 100%; margin-bottom: 12px;">
+                        </div>
+                        <div class="proj-title">Online Cricket Live Score</div>
+                        <div class="proj-tags"><span class="ptag"
+                                style="color:var(--blue);border-color:var(--blue)">Html</span><span class="ptag"
+                                style="color:var(--orange);border-color:var(--orange)">Css</span><span class="ptag"
+                                style="color:var(--yellow);border-color:var(--yellow)">JavaScript</span><span class="ptag"
+                                style="color:var(--blue);border-color:var(--blue)">Servlet</span><span class="ptag"
+                                style="color:var(--red);border-color:var(--red)">Mysql</span><span class="ptag"
+                                style="color:var(--green);border-color:var(--green)">API</span><span class="ptag" style="color:#8e44ad; border-color:#8e44ad;">JSP</span><span class="ptag" style="color:#00758f; border-color:#00758f;">JDBC</span>
+                            </div>
+                    </div>
+                    <div class="proj-bk">
+                        <div class="proj-desc">
+                        <div class="proj-title"><span style="color:#007bff; font-weight:bold; margin:0 5px;">Role:</span>Full stack Developer</div>Live cricket score (web application) using API with Servlet, JSP, HTML, CSS, and JavaScript.
+                        </div>
+                          <!-- <a href="http://localhost:8080/Cricket/" class="proj-link" target="_blank">Audience Login &rarr;</a>
+                        <a href="http://localhost:8080/Admin_Control/" class="proj-link" target="_blank">Admin Login &rarr;</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="proj p3 up">
+                <div class="proj-inner">
+                    <div class="proj-f">
+                        <div class="proj-num">03 / 04</div>
+                        <div class="proj-ico"
+                            style="background-image: url('/C:/Users/Asus/.gemini/antigravity/brain/27dfebe1-757e-4d73-b059-d88e2f203946/sorting_visualizer_tool_1772912403281.png'); background-size: cover; border-radius: 12px; height: 120px; width: 100%; margin-bottom: 12px;">
+                        </div>
+                        <div class="proj-title">To do list</div>
+                        <div class="proj-tags"><span class="ptag"
+                                style="color:var(--red);border-color:var(--red)">Html</span><span class="ptag"
+                                style="color:var(--orange);border-color:var(--orange)">Css</span><span class="ptag"
+                                style="color:var(--blue);border-color:var(--blue)">JSP</span>
+                                <span class="ptag" style="color:var(--yellow);border-color:var(--yellow)">Hibernate</span> <span class="ptag" style="color:var(--green);border-color:var(--green)">JDK</span><span class="ptag" style="color:var(--brown);border-color:var(--brown)">Servlet</span><span class="ptag" style="color:var(--purple);border-color:var(--purple)">Mysql</span></div>
+                    </div>
+                    <div class="proj-bk">
+                        <div class="proj-desc">
+                        <div class="proj-title"><span style="color:#007bff; font-weight:bold; margin:0 5px;">Role:</span>Java Developer</div>This is a To-Do List Web Application built using Java, Hibernate, JSP, and Servlets. It helps users manage tasks with CRUD operations and simple pagination.
+                        </div>
+                        <!-- <a href="https://brahmpreett.github.io/Sorting_Visualizer/" class="proj-link"
+                            target="_blank">View Demo &rarr;</a> -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="proj p8 up">
+                <div class="proj-inner">
+                    <div class="proj-f">
+                        <div class="proj-num">04 / 04</div>
+                        <div class="proj-ico"
+                            style="background-image: url('/C:/Users/Asus/.gemini/antigravity/brain/27dfebe1-757e-4d73-b059-d88e2f203946/sorting_visualizer_tool_1772912403281.png'); background-size: cover; border-radius: 12px; height: 120px; width: 100%; margin-bottom: 12px;">
+                        </div>
+                        <div class="proj-title">Microservices</div>
+                        <div class="proj-tags"><span class="ptag"
+                                style="color:var(--red);border-color:var(--red)">Java</span>
+                                <span class="ptag"
+                                style="color:var(--orange);border-color:var(--orange)">Spring Boot</span>
+                                <span class="ptag"
+                                style="color:var(--blue);border-color:var(--blue)">Spring Data JPA</span>
+                                <span class="ptag"
+                                style="color:var(--green);border-color:var(--green)">Mysql</span>
+                                <span class="ptag"
+                                style="color:var(--yellow);border-color:var(--yellow)">OpenFeign</span>
+                                <span class="ptag"
+                                style="color:var(--purple);border-color:var(--purple)">REST API</span>
+                                <span class="ptag"
+                                style="color:var(--brown);border-color:var(--brown)">Postman</span>
+                               </div>
+                    </div>
+                    <div class="proj-bk">
+                        <div class="proj-desc">
+                            <div class="proj-title"><span style="color:#007bff; font-weight:bold; margin:0 5px;">Role:</span> API Developer</div>Developed REST APIs for the Microservice Quiz & Question Project using Spring Boot and Microservice Architecture. Worked with Spring Data JPA, MySQL, OpenFeign, and Postman for backend development, database management, and API testing.
+                        </div>
+                        
+                        <!-- <a href="https://brahmpreett.github.io/Sorting_Visualizer/" class="proj-link"
+                            target="_blank">View Demo &rarr;</a> -->
+                    </div>
+                </div>
+
+                
+           
+
+            
+        </div>
+        
+    </section>
+
+    <div class="pips" style="background:var(--bg)">
+        <div class="pip"></div>
+        <div class="pip"></div>
+        <div class="pip"></div>
+    </div>
+
+<!-- ════════ RESUME ════════ -->
+<section id="resume">
+    <div class="sec-head up">
+        <div class="sec-tag">04 — Resume</div>
+        <h2 class="sec-title">My <span>Resume</span></h2>
+    </div>
+
+    <div class="resume-container">
+        <div class="resume-btn up">
+            <a href="Resume.pdf" target="_blank">Download Resume</a>
+        </div>
+    </div>
+</section>
+
+
+</section>
+<div class="pips" style="background:var(--bg2)">
+        <div class="pip"></div>
+        <div class="pip"></div>
+    </div>
+
+    <!-- ════════ CONTACT ════════ -->
+    <section id="contact">
+        <div class="sec-head">
+            <div class="sec-tag">05&mdash; Contact</div>
+            <h2 class="sec-title">Let's <span>Connect</span></h2>
+            <p class="sec-sub">Have a project? Let's solve it together.</p>
+        </div>
+        <form id="contact-form" class="contact-box up">
+            <div class="f-row">
+                <div class="f-grp"><label>Your Name</label><input type="text" id="name" name="name"
+                        placeholder="Lakshya Gupta" required>
+                </div>
+                <div class="f-grp"><label>Email Address</label><input type="email" id="email" name="email"
+                        placeholder="lakshya.guptaaa@gmail.com" required>
+                </div>
+            </div>
+            <div class="f-grp"><label>Subject</label><input type="text" id="subject" name="subject"
+                    placeholder="What's this about?" required>
+            </div>
+            <div class="f-grp"><label>Message</label><textarea id="message" name="message"
+                    placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" id="submit-btn" class="f-btn btn-m">Send Message &#9992;</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/Lakshya177" class="social-icon" target="_blank" aria-label="GitHub">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                </svg>
+            </a>
+    
+            <a href="https://www.linkedin.com/in/lakshyaxgupta" class="social-icon" target="_blank"
+                aria-label="LinkedIn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+    
+            <!-- <a href="---" class="social-icon" target="_blank" aria-label="Instagram">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37a4 4 0 1 1-2.63-2.63 4 4 0 0 1 2.63 2.63z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+                </svg>
+            </a> -->
+    
+            <!-- <a href="---" class="social-icon" target="_blank" aria-label="X">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6L6 18"></path>
+                    <path d="M6 6l12 12"></path>
+                </svg>
+            </a> -->
+    
+            <!-- <a href="---" class="social-icon" target="_blank" aria-label="LeetCode">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16.5 3L9 10.5l7.5 7.5"></path>
+                    <path d="M9 10.5h10"></path>
+                </svg>
+            </a> -->
+    
+            <a href="mailto:lakshya.guptaaa1@gmail.com" class="social-icon" aria-label="Email">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+            </a>
+        </div>
+    
+        <p><a href="support.html" class="footer-link"><strong>Support</strong></a> the developer.</p>
+    
+        <p style="margin-top:8px;font-size:.8rem">
+            &copy; 2026 All Rights Reserved |
+            <strong><a href="#hero" class="footer-link">Lakshya Gupta</a></strong>
+        </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
